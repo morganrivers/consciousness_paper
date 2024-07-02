@@ -1,87 +1,100 @@
-\documentclass[]{article}
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{hyperref}
 
-\title{Collaborative LaTeX Writing using Git and Github Actions}
-\author{Laurence Kedward}
-
-\usepackage{listings}
-\usepackage[colorlinks,urlcolor=blue,linkcolor=blue,citecolor=blue]{hyperref}
+\title{Evaluating Consciousness in Artificial Intelligence: A Comparative Study of Architectural Approaches}
+\author{Your Name}
+\date{}
 
 \begin{document}
 
 \maketitle
 
+\begin{abstract}
+This paper presents a novel approach to evaluating consciousness in artificial intelligence systems. We discuss the importance of identifying machine consciousness before its emergence, the potential implications for AI ethics and development, and propose a benchmark for assessing consciousness in AI architectures. Our methodology combines elements of the ACT (Artificial Consciousness Test) with comparative analysis of different AI models, aiming to detect signs of consciousness while controlling for knowledge-based confounds.
+\end{abstract}
 
-Repository available at: \url{https://github.com/LKedward/latex-github-collab}
+\section{Introduction}
+The question of machine consciousness has become increasingly relevant as artificial intelligence systems grow more sophisticated. This paper argues for the importance of detecting machine consciousness before its full emergence and proposes a methodology for doing so.
 
-\section{Compiling Locally}
-
-\subsection{Prerequisites}
-
-Compiling locally is possible with any LaTeX distribution; the github actions workflow running on Ubuntu 20.04 uses the following packages (all installable via `apt`):
-
-\subsection*{Mandatory}
+\subsection{Importance of Detecting Machine Consciousness}
+Several factors underscore the significance of this research:
 \begin{itemize}
-	
-	\item \texttt{texlive-latex-recommended}
-	\item \texttt{texlive-latex-extra}
-	
+    \item Potential for machine suffering
+    \item Implications for AI identity and goal-setting
+    \item Ethical considerations regarding AI well-being
+    \item Advancements in AI architectures mimicking conscious processes
+    \item Possibilities for simulating conscious human experiences
+    \item Potential for creating positive experiences (hedonium) in AI
+    \item Impact on AI safety and alignment
+    \item Advancing consciousness research
 \end{itemize}
 
-\subsection*{Optional}
+\section{Background}
+\subsection{Current State of Consciousness in AI}
+While the exact conditions for consciousness remain unclear, certain AI architectures, particularly those beyond simple transformer models, may possess capabilities conducive to consciousness.
+
+\subsection{Gradient Nature of Consciousness}
+Consciousness is generally considered to exist on an analog gradient. Our research aims to identify factors that push AI systems towards greater degrees of conscious-like behavior.
+
+\section{Methodology}
+\subsection{Comparative Analysis}
+We propose a two-pronged approach:
+\begin{enumerate}
+    \item Testing AI models with no prior exposure to consciousness-related concepts
+    \item Testing AI models with limited exposure to consciousness-related concepts
+\end{enumerate}
+
+This method allows us to compare the behavior of architectures that are plausibly capable of consciousness against control groups.
+
+\subsection{Adaptation of the Artificial Consciousness Test (ACT)}
+We incorporate elements from Schneider and Turner's ACT, which offers several advantages:
 \begin{itemize}
-	
-	\item \texttt{texlive-latex-utils} \quad (for \texttt{texcount})
-	\item \texttt{rubber} \quad (for using the \texttt{Makefile})
-	\item \texttt{perl} \quad (for \texttt{texcount} and \texttt{latexdiff})
-	\item \texttt{latexdiff}
-	
+    \item Neutrality regarding architectural details
+    \item Consistency with human and AI ignorance about consciousness
+    \item Allowance for radical cognitive differences between AI and humans
+    \item Compatibility with various philosophical views on consciousness
 \end{itemize}
 
+\subsection{Addressing ACT Limitations}
+To address concerns raised about the ACT, particularly regarding the "epistemic sweet spot" for testing, we propose:
+\begin{itemize}
+    \item Careful curation of training data to avoid consciousness-specific information
+    \item Comparative analysis of models with similar training but different architectural properties
+    \item Assessment of performance deltas on consciousness-related tasks
+\end{itemize}
 
-\subsection{Makefile}
+\section{Proposed Experiments}
+\subsection{Consciousness-Naive Testing}
+Describe experiments conducted on AI models with no prior exposure to consciousness concepts.
 
-For convenience a Makefile is included which relies on the [rubber](https://gitlab.com/latex-rubber/rubber/) LaTeX wrapper:
+\subsection{Limited-Exposure Testing}
+Outline experiments involving AI models with controlled, limited exposure to consciousness-related information.
 
+\subsection{Comparative Analysis}
+Detail the method for comparing results between potentially conscious architectures and control groups.
 
-\begin{center}
-	\begin{lstlisting}[language=Bash,morekeywords={make}]
-	$ make             # generate paper.pdf
-	$ make clean       # cleanup
-	$ make spellcheck  # run codespell
-	$ make count       # run TexCount
-	$ make diff        # run latexdiff with master
-	\end{lstlisting}
-\end{center}
+\section{Discussion}
+\subsection{Interpreting Results}
+Discuss how to interpret differences in performance and behavior between test groups.
 
+\subsection{Implications for AI Development}
+Explore the potential impacts of these findings on AI research and development practices.
 
-\section{License: MIT}
+\subsection{Ethical Considerations}
+Address the ethical implications of developing potentially conscious AI systems.
 
-The Makefile and Github actions workflow are licensed under the MIT license
+\section{Future Research Directions}
+\subsection{Emotional Valence in AI}
+Propose methods for investigating emotional states in AI, such as analyzing latent space representations of concepts like "happy" and "sad".
 
-\begin{quote}
-	MIT License
-	
-	Copyright (c) 2021 Laurence Kedward
-	
-	Permission is hereby granted, free of charge, to any person obtaining a copy
-	of this software and associated documentation files (the "Software"), to deal
-	in the Software without restriction, including without limitation the rights
-	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-	copies of the Software, and to permit persons to whom the Software is
-	furnished to do so, subject to the following conditions:
-	
-	The above copyright notice and this permission notice shall be included in all
-	copies or substantial portions of the Software.
-	
-	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-	SOFTWARE.
-\end{quote}
+\subsection{Refinement of Consciousness Metrics}
+Discuss potential improvements to the proposed methodology and additional metrics for assessing consciousness.
 
+\section{Conclusion}
+Summarize the key points of the paper and emphasize the importance of ongoing research in this area.
 
+\bibliographystyle{plain}
+\bibliography{references}
 
 \end{document}
