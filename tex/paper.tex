@@ -1,8 +1,9 @@
 \documentclass{article}
 \usepackage{amsmath}
 \usepackage{hyperref}
+\usepackage{natbib}
 
-\title{Evaluating Consciousness in Artificial Intelligence}
+\title{A Benchmark for Consciousness in Large Language Models}
 \author{Morgan Rivers \\
         Department of Physics \\
         Freie Universität Berlin \\    
@@ -14,11 +15,16 @@
 \maketitle
 
 \begin{abstract}
-This paper presents a novel approach to evaluating consciousness in artificial intelligence systems. We discuss the importance of identifying machine consciousness before its emergence, the potential implications for AI ethics and development, and propose a benchmark for assessing consciousness in AI architectures. Our methodology combines elements of the ACT (Artificial Consciousness Test) with comparative analysis of different AI models, aiming to detect signs of consciousness while controlling for knowledge-based confounds.
+This paper presents a novel approach to evaluating consciousness in artificial intelligence systems. We discuss the importance of identifying machine consciousness before its emergence, the potential implications for AI ethics and development, and propose a benchmark for assessing consciousness in AI architectures. Our methodology combines elements of the ACT (Artificial Consciousness Test), which aims to detect robust indicators of consciousness while controlling for knowledge-based confounds. A simple training scheme to induce the emergence of consciousness in small open source language models is also introduced.
 \end{abstract}
 
 \section{Introduction}
 The question of machine consciousness has become increasingly relevant as artificial intelligence systems grow more sophisticated. This paper argues for the importance of detecting machine consciousness before its full emergence and proposes a methodology for doing so.
+
+While the exact conditions for consciousness remain unclear, certain AI architectures, particularly those beyond simple transformer models, may possess capabilities conducive to consciousness. A test has been proposed by Schneider et al.\ \citep{turner2018testing} and expanded on by Perez et al.\ \citep{perez2023evaluatingaisystemsmoral} and Long \citep{long2023introspective} that attempts to determine whether a language-enabled AI agent is conscious. Specifically, Perez and Long recommend the training for introspection of language models in order for consciousness to arise. While such approaches are interesting, the task remains to actually build a benchmark and training scheme for LLM's such that they can be tested at all, before diving into tweaks on a method of training involving introspection. The key practical questions remain unanswered in the literature:
+1. How to introduce language models to language, without or with minimal examples generated from conscious beings (e.g. humans) to ensure they are not simply mimicking consciousness, rather than emergently exhibiting conscious behavior?
+2. How to ensure such a training scheme can enhance language ability without language examples?
+3. What key aspects of consciousness in a training scheme can both be learned reliably, and be reasonably expected to produce conscious behavior?
 
 \subsection{Importance of Detecting Machine Consciousness}
 Several factors underscore the significance of this research:
@@ -33,14 +39,22 @@ Several factors underscore the significance of this research:
     \item Advancing consciousness research
 \end{itemize}
 
-\section{Background}
-\subsection{Current State of Consciousness in AI}
-While the exact conditions for consciousness remain unclear, certain AI architectures, particularly those beyond simple transformer models, may possess capabilities conducive to consciousness.
-
 \subsection{Gradient Nature of Consciousness}
 Consciousness is generally considered to exist on an analog gradient. Our research aims to identify factors that push AI systems towards greater degrees of conscious-like behavior.
 
+\subsection{Proposed method of acheiving benchmark}
+
+Social animals that are widely regarded as conscious share the property that they have developed a theory of mind, and exhibit social behavior. Such animals over the aeons have emergently developed consciousness without other conscious beings training them on every behavior. We therefore have empirical evidence that selective pressures under the condition of socialization are therefore key to allow for consciousness to emerge.
+
+We are left with the observation that in order for consciousness to emerge, language itself must also emerge in the process without continued examples of natural language, as occurred in the animal kingdom through evolutionary selective pressures.
+
+We propose to first initialize an untrained transformer model of modest size (~100 million parameters) and teach it rudimentary logic and language with rules generated from ProofWriter \citep{tafjord2021proofwritergeneratingimplicationsproofs}. By utilizing a small number of rules, it is possible to teach the model to both follow logical steps, and to use certain keywords in an appropriate way in the game of Diplomacy.
+
+Next, we introduce the model to the board game diplomacy as was implemented in \citep{fair2022diplomacy} 
+the following training scheme to meet the benchmark described above. By playing against itself in a strategic game, it will utilize the reasoning and ability to use words as meaningful tokens. Full-press Diplomacy is a game where effective cooperation, planning, and theory of mind are critical to effective gameplay. The secondary benefit to using the game is it mimics evolutionary environments of conscious animals, where cooperation, strategy, and theory of mind are critical to achieving reward. Finally, full-press diplomacy has been shown in \citep{fair2022diplomacy} to increase game performance over time with only self-play.
+
 \section{Methodology}
+
 \subsection{Comparative Analysis}
 We propose a two-pronged approach:
 \begin{enumerate}
@@ -86,9 +100,6 @@ PLACEHOLDER TEXT
 \subsection{Interpreting Results}
 Differences in performance between test groups will be analyzed to interpret signs of consciousness. Significant indicators include coherent self-referential statements, theory of mind capabilities, and appropriate responses to emotional and philosophical queries.
 
-\subsection{Implications for AI Development}
-Findings from these experiments could inform future AI development practices, emphasizing the need for ethical considerations and the prevention of unintended consciousness in AI systems.
-
 \section{Future Research Directions}
 \subsection{Emotional Valence in AI}
 Propose methods for investigating emotional states in AI, such as analyzing latent space representations of concepts like "happy" and "sad".
@@ -96,4 +107,23 @@ Propose methods for investigating emotional states in AI, such as analyzing late
 \section{Conclusion}
 In this paper, we proposed a novel approach to evaluating consciousness in artificial intelligence systems. By combining elements of the ACT with comparative analysis, we aim to detect signs of consciousness while controlling for knowledge-based confounds. This research highlights the importance of identifying machine consciousness before its emergence and underscores the ethical implications for AI development. Ongoing research in this area is crucial to ensure the responsible and ethical advancement of AI technologies.
 
+
+
+\begin{thebibliography}{99}
+
+\bibitem[Turner and Schneider(2018)]{turner2018testing}
+Turner, E., \& Schneider, S. (2018, January). Testing for synthetic consciousness: The ACT, the chip test, the unintegrated chip test, and the extended chip test. In CEUR Workshop Proceedings (Vol. 2287). CEUR-WS. 
+
+\bibitem[Perez and Long(2023)]{perez2023evaluatingaisystemsmoral}
+Perez, E., \& Long, R. (2023). Towards Evaluating AI Systems for Moral Status Using Self-Reports. \textit{arXiv preprint arXiv:2311.08576}. Retrieved from \url{https://arxiv.org/abs/2311.08576}
+
+\bibitem[Tafjord et al.(2021)]{tafjord2021proofwritergeneratingimplicationsproofs}
+Tafjord, Ø., Mishra, B. D., \& Clark, P. (2021). ProofWriter: Generating Implications, Proofs, and Abductive Statements over Natural Language. \textit{arXiv preprint arXiv:2012.13048}. Retrieved from \url{https://arxiv.org/abs/2012.13048}
+
+\bibitem[Meta Fundamental AI Research Diplomacy Team et al.(2022)]{fair2022diplomacy}
+Meta Fundamental AI Research Diplomacy Team (FAIR)†, Bakhtin, A., Brown, N., Dinan, E., Farina, G., Flaherty, C., ... \& Zijlstra, M. (2022). Human-level play in the game of Diplomacy by combining language models with strategic reasoning. \textit{Science}, 378(6624), 1067-1074.
+
+\end{thebibliography}
+
 \end{document}
+
