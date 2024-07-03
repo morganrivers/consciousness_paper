@@ -1,7 +1,9 @@
 \documentclass{article}
 \usepackage{amsmath}
-\usepackage{hyperref}
 \usepackage{natbib}
+\usepackage{listings}
+
+\usepackage[colorlinks=true, linkcolor=blue, citecolor=blue, filecolor=blue, urlcolor=blue, pdfborder={0 0 0}]{hyperref}
 
 \title{A Benchmark for Consciousness in Large Language Models}
 \author{Morgan Rivers \\
@@ -55,14 +57,27 @@ the following training scheme to meet the benchmark described above. By playing 
 
 \section{Methodology}
 
-\subsection{Comparative Analysis}
-We propose a two-pronged approach:
-\begin{enumerate}
-    \item Testing AI models with no prior exposure to consciousness-related concepts
-    \item Testing AI models with limited exposure to consciousness-related concepts
-\end{enumerate}
+In general, the methodology for training is as follows:
 
-This method allows us to compare the behavior of architectures that are plausibly capable of consciousness against control groups.
+1. ensure the model has a simple grasp of english\\
+
+2. use diplomacy to ensure development of theory of mind and use of english in communication\\
+
+\begin{lstlisting}[breaklines=true, breakatwhitespace=true, columns=flexible, basicstyle=\ttfamily\small]
+
+In order to arrive at 1, we will be iteratively testing the model such that it passes the ACT test some small portion of the time. We will need to add more natural language to the training until it can do so. As the model trains, we expect that consciousness arising will lead to improved performance on the ACT test. To make that be a reasonable chance, we will train a small version of https://github.com/google-deepmind/recurrentgemma at only 100 million parameters, and compare it with a similarly sized https://github.com/google/gemma_pytorch Gemma model.
+
+This is just a first pass. Obviously, higher parameter counts would be nice (but are very expensive), and improving the training protocol enough that we need zero natural language would make for the strongest test of all, but this is infeasible as a first pass with limited resources for training.
+
+As a source of natural language, the tinystories dataset may be appropriate, or perhaps coding textbooks as were used by Microsoft in the training of phi-1 and phi-1.5.
+
+
+\end{lstlisting}
+\subsection{Comparative Analysis}
+We will compare results between potentially conscious architectures and control groups to identify significant differences in performance and behavior. Key metrics include the ability to discuss internal states, theory of mind, and emotional understanding.
+
+The core feature of the analysis which greatly enhances the power of the ACT test is to compare enhanced architectures, such as RecurrentGemma, with the same training against control groups that have architectures that are less likely to exhibit consciousness, such as Gemma. This should allow the detection of even very small degrees of conscious emergence, and potentially running multiple models of different sizes can inform us of "scaling laws": given an appropriate training regime, how conscious compared to a human a model may be based on its parameter count and architecture.
+
 
 \subsection{Adaptation of the Artificial Consciousness Test (ACT)}
 We incorporate elements from Schneider and Turner's ACT, which offers several advantages:
@@ -81,24 +96,40 @@ To address concerns raised about the ACT, particularly regarding the "epistemic 
     \item Assessment of performance deltas on consciousness-related tasks
 \end{itemize}
 
-\section{Proposed Experiments}
-To evaluate the proposed methodology, we designed experiments to test AI models under different conditions.
-
-\subsection{Consciousness-Naive Testing}
-In this experiment, AI models trained without exposure to consciousness-related concepts will be assessed using the ACT. This helps establish a baseline for non-conscious behavior.
-
-\subsection{Limited-Exposure Testing}
-AI models with controlled exposure to consciousness-related concepts will undergo the same ACT. This aims to determine if limited knowledge influences the AI's responses and behaviors indicative of consciousness.
-
-\subsection{Comparative Analysis}
-We will compare results between potentially conscious architectures and control groups to identify significant differences in performance and behavior. Key metrics include the ability to discuss internal states, theory of mind, and emotional understanding.
-
-\subsection{Training Protocol}
-PLACEHOLDER TEXT
-
 \section{Discussion}
 \subsection{Interpreting Results}
-Differences in performance between test groups will be analyzed to interpret signs of consciousness. Significant indicators include coherent self-referential statements, theory of mind capabilities, and appropriate responses to emotional and philosophical queries.
+Differences in performance between test groups will be analyzed to interpret signs of consciousness. Significant indicators include coherent self-referential statements, theory of mind capabilities, and appropriate responses to emotional and philosophical queries, as outlined extensively in the literature discussing the ACT test.
+\subsection{Justification and scope of the test}
+The test at hand is applicable to most, but not all consciousness theories. Notably Panpsychist and IIT are not amenable to the results of these tests.
+
+There appears as well to be confusion over whether this test is flawed in some way \citep{udell2021schneider}. The first objection is "The AI can’t be entirely prevented from learning about consciousness-adjacent aspects of the world if it’s going to be a conversational partner in a test of this sort. But it’s unclear how much world knowledge would be too much, in the hands of a sophisticated learning AI. Implementation of the ACT will therefore require careful aim at an epistemic sweet spot.".
+
+While without a "control" model, this is a decent objection, a reasonable sweet spot in terms of filtering training data/erasing relevant data can be found by gradually introducing more natural language in the training until the model passes approximately half the time and fails half the time. At that point, the "sweet spot" can be significantly widened by simply getting the delta between models with and without the necessary architectural properties in terms of test performance, that have the same training data, and have been shown to perform similarly on cognitive tests. We will find models with fully emergent consciousness to be far ahead of models without architectures capable of consciousness on emergent consciousness benchmark, despite all of the training data being identical between the "control" and the "treatment" agent.
+
+The second objection of \citep{udell2021schneider} is as follows:
+
+"By lack of miracles, the system’s responses to the ACT will be some further implementation of its ordinary architectural processes.  It might, for example, if given ACT Sample Question 1, do some complicated version of mechanically associating lack of survival with death and death with sadness, then answer that it would be sad to learn it would be deleted.  Few AI consciousness doubters, we venture, ought to abandon their motivating architectural worry upon consideration of this situation — unless, perhaps, their motivating architectural worry is highly specific and of just the right sort.  For most AI consciousness doubters, the underlying inference to the best explanation should not remove their doubt.  This is the audience problem.  Most theorists who have the kind of architectural worry that motivates seeking out a test like the ACT should, upon seeing that an AI passes the test, remain worried, rather than confidently concluding that the AI subject is conscious."
+
+The response to this is that the expectation of any test of consciousness should be understood as *providing further evidence to a reasonable audience*. A test cannot be expected to provide us with 100\% confidence in the consciousness of an AI entity, as we cannot even know our fellow humans we interact with on a daily basis are conscious with this kind of certainty. Instead, we have reasonable evidence, inferred from a series of reasonable inferences. Explicitly:
+
+1. I am conscious, and I have experiences\\
+
+2. The other entity, whether a human, an AI, or a nonhuman animal, seems to contain exposure to an environment similar to my own in relevant ways (e.g. exposure to a need to develop theory of mind, selective pressures for accessing internal plans and identifying as a person)\\
+
+3. The other entity is instantiated on a substrate (either silicon or organic) which contains various analogous structures to my own, such as neural patterns of firing, ability to access and use internal states, high levels of interconnectedness, and a capacity for reasoning and honest communication of internal states.\\ \\
+And finally,\\ \\
+4. The development of apparent consciousness in the entity has not been formed by simple mimicry of other conscious beings, and still it claims to possess consciousness as well as having the capability to discuss consciousness in detail and in an informed manner in a way a non-conscious being would have great difficulty with, unless it was extensively trained on the utterances and/or behaviors of conscious beings.\\ \\ 
+So unless we are refusing to be empirically grounded, the results of such a test are good, but not conclusive evidence that the entity is conscious, and excluding the theorists who insist on the near certainty of pan-psychism or IIT being the only possible way consciousness may be explained, any entity satisfying points 1-4 should logically convince a theorist that their theory about consciousness does not hold up to the empirical evidence, namely the consciousness benchmark proposed in this paper.
+\subsection{Large Language Model Architectures More Likely to Exhibit Consciousness}
+At the present moment, the most popular architecture, the transformer, is notably unlikely to architecturally capable of passing the ACT test, remarkably more so than many other architectures. The reasons are explained in detail in \citep{butlin2023consciousnessartificialintelligenceinsights}. Essentially, there is very little recursion in the most popular LLM architecture, used in the likes of Gpt4o and Claude3.5. As these models by and large use the next-token prediction when running inference, and by and large each token is computed simply based on past tokens, and by-and-large not based on past computation there appears to be very little possibility of "stream of consciousness" in current architectures.
+
+However, after detailed investigation into the degree of incorporation of past computation into current computation, a more complex picture emerges: it may be that the calculation done along the layers in past token computation, which is incorporated into the layers of the transformers, does much of the useful computation: in other words, when an attention head on layer 17 of a language model tries to predict the next token, it seems to be attending to the residual stream of past layers *at the current depth of the layer in question*. At first this seems to be an accident to allow us to squeeze more compute for the massively parallel training these models were designed to take advantage of. But the fact that it does not simply look at the embedded version of the context token, and instead attends to the residual stream for that context token many layers deep implies that whatever compute was performed up to that layer in that context token remains for the model to use, and notably this is recomputed for every context token, each and every time the transformer runs! Unless the model is failing to utilize such "wasted" context token computation, it seems likely that the model has learned to use this as "extra" computation and thus incorporate more than just the identity of context tokens, but also compute some useful things for future token prediction even when computing past context tokens. This is where the concept of a "stream of consciousness" may be appropriate: the model is in a sense sequentially computing on past tokens, iteratively using the results of these computations for the next token prediction, and thus may have a limited sense of future planning involved in the past token computations!
+
+Still, the reintroduction of RNN's to the scene of large language models (previously dominant in LSTM's, but vanishing and exploding gradients lead to LSTM's to fall out of favor compared to longer-context-window-capable transformers) may allow for a much more intuitive conception of "stream of consciousness" in human terms. RNN's allow for a "hidden" representation that is updated across the context tokens, and recent architectures such as Hawk or Griffin \citep{de2024griffinmixinggatedlinear} (avalailable from Google in the form of "RecurrentGemma" model) are capable of continuously updating this representation. It is therefore possible for such language models to authentically make a plan 100 tokens ago, store this in their hidden representation, and 100 tokens later implement the stored plan, something difficult with transformer architectures.
+
+As an example, in the game of "20 questions", the model may say that it has selected an object for which we must guess. If it is a Hawk or Griffin architecture, then it very well may have selected an architecture and this is likely represented in its hidden layer. That selection is unlikely to change, all else equal, and when you guess the object it selected initially, it is likely to honestly inform you of the original selection.
+
+On the other hand if a transformer language model plays the same game, there would need to be the storage of that selected object in a given token that occurred when it claimed it had selected the item. It would need to attend to this token each and every time a question was asked about the object, or re-store this data in later token generations by attending back to the original token. Not only that, only the latest layers would likely have sufficient access to the original token (as attention heads refer back to the value of residual stream on the layer they are at, so the first layer can only look 1 layer deep to see what to dump into its own residual stream). Given the difficulty of an attention head properly accessing the information under these circumstances, a transformer language model is much less likely to have the sense of time and stream of consciousness recognizable to humans, which may be a key component required to report conscious experience honestly.
 
 \section{Future Research Directions}
 \subsection{Emotional Valence in AI}
@@ -122,6 +153,17 @@ Tafjord, Ø., Mishra, B. D., \& Clark, P. (2021). ProofWriter: Generating Implic
 
 \bibitem[Meta Fundamental AI Research Diplomacy Team et al.(2022)]{fair2022diplomacy}
 Meta Fundamental AI Research Diplomacy Team (FAIR)†, Bakhtin, A., Brown, N., Dinan, E., Farina, G., Flaherty, C., ... \& Zijlstra, M. (2022). Human-level play in the game of Diplomacy by combining language models with strategic reasoning. \textit{Science}, 378(6624), 1067-1074.
+
+\bibitem[Udell(2021)]{udell2021schneider}
+Udell, D. B. (2021). Susan Schneider's proposed tests for AI consciousness: Promising but flawed. \textit{Journal of Consciousness Studies}, 28(5-6), 121-144.
+
+\bibitem[Long(2023)]{long2023introspective}
+Long, R. (2023). Introspective capabilities in large language models. \textit{Journal of Consciousness Studies}, 30(9-10), 143-153.
+\bibitem[Butlin et al.(2023)]{butlin2023consciousnessartificialintelligenceinsights}
+Butlin, P., Long, R., Elmoznino, E., Bengio, Y., Birch, J., Constant, A., Deane, G., Fleming, S. M., Frith, C., Ji, X., Kanai, R., Klein, C., Lindsay, G., Michel, M., Mudrik, L., Peters, M. A. K., Schwitzgebel, E., Simon, J., \& VanRullen, R. (2023). Consciousness in Artificial Intelligence: Insights from the Science of Consciousness. \textit{arXiv preprint arXiv:2308.08708}. Retrieved from \url{https://arxiv.org/abs/2308.08708}
+
+\bibitem[De et al.(2024)]{de2024griffinmixinggatedlinear}
+De, S., Smith, S. L., Fernando, A., Botev, A., Cristian-Muraru, G., Gu, A., Haroun, R., Berrada, L., Chen, Y., Srinivasan, S., Desjardins, G., Doucet, A., Budden, D., The, Y. W., Pascanu, R., De Freitas, N., \& Gulcehre, C. (2024). Griffin: Mixing Gated Linear Recurrences with Local Attention for Efficient Language Models. \textit{arXiv preprint arXiv:2402.19427}. Retrieved from \url{https://arxiv.org/abs/2402.19427}
 
 \end{thebibliography}
 
