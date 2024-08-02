@@ -55,6 +55,39 @@ We propose to first initialize an untrained transformer model of modest size (~1
 Next, we introduce the model to the board game diplomacy as was implemented in \citep{fair2022diplomacy} 
 the following training scheme to meet the benchmark described above. By playing against itself in a strategic game, it will utilize the reasoning and ability to use words as meaningful tokens. Full-press Diplomacy is a game where effective cooperation, planning, and theory of mind are critical to effective gameplay. The secondary benefit to using the game is it mimics evolutionary environments of conscious animals, where cooperation, strategy, and theory of mind are critical to achieving reward. Finally, full-press diplomacy has been shown in \citep{fair2022diplomacy} to increase game performance over time with only self-play.
 
+\section{Training methodologies to achieve high confidence in ACT test results}
+It is still the case that we want models trained to give correct answers, not just mimicky answers.
+That implies that a model which is trained solely on task performance related to factual answering and understanding natural language communication, and not on mimicking some human-like output, would be a less misleading model when it comes to answering the ACT test honestly and accurately. Furthermore, understanding natural language must inevitably require some degree of skill in logical deduction.
+
+This is why I wanted the model to self play diplomacy: I wanted it to be rewarded for action that represents internal states accurately, and not for any human-like mimicry. I know self-play can be a very powerful tool to train deep knowledge. All the ACT questions are going to be about what the model plans, prefers, likes, dislikes, knows, doesn't know, how it views others, the structure and breadth of inner experience.
+
+It seems that in terms of understanding natural language (English) without enforcing a model to mimic or infer logically invalid statements, or to hallucinate, there are a limited set of options where training on these tasks or similar tasks has succeeded in the past:
+\begin{itemize}
+    \item[A:] training the model on natural language based (e.g. questions written by LLMs or humans) question answering
+    \item[B:] training on performance on language-involving self play, where self-talk or talk with fellow agents must be constrained to properly formatted English language. E.g. poker, diplomacy, rock paper scissors.
+    \item[C:] training on performance of coding tasks specified in natural language 
+    \item[D:] training on entailment in knowledge databases (provides very large datasets, hundreds of thousands of prompts or even unbounded, with easily constrained input knowledge)
+    \item[E:] training on synthetically generated natural language first order logic tasks (provides very large datasets, hundreds of thousands of prompts or even unbounded, with easily constrained input knowledge)
+    \item[F:] Training on many synthetically generated natural language prompts about that model's internal state
+    \item[G:] training on the degree of certainty of answers to any of the above, or even just simple synthetically generated mathematics questions.
+\end{itemize}
+
+\subsection{Regarding option A}
+
+There are further important restrictions: reducing the breadth of knowledge required helps a model to be smaller but maintain similar intelligence. So simply finding huge dataset of multiple choice questions is unlikely to work.
+
+Reducing a model's exposure to concepts of feelings, preferences, emotions, discussion of internal states, assumptions about its own identity, philosophical knowledge mean that we must be strict about excluding these concepts from its training data, especially early on when foundational neural structures emerge.
+
+(Perhaps information retrieval systems could help prevent memorization and display what the model has learned/memorized explicitly? That way we could train language model normally but observe the actual inner knowledge of the agent directly? But it would be hard to separate false "knowledge" about its internal experience from mimickry of humans in the standard training case).
+
+Requiring a model to furthermore be reasonably capable and intelligent at a relatively small size means that we need to carefully vet the questions themselves to eliminate this.
+
+Option A is thus simple, but difficult to implement. It is also hard for an entirely random language model to train on such a small dataset as human generated multiple choice.
+
+\subsection{Regarding option B}
+
+This suffers from the possibility that the language developed may still be incomprehensible to humans, even if enforced to be English (secret/hard to detect information can be transmitted through english, so what the text means to language models may be very different from what it means to humans). Furthermore, self play with multiple agents is hard to implement, and diplomacy especially is quite a complex game meaning much learning would be in an unrelated domain to inner planning, theory of mind. Much would have to be understanding board states, understanding game mechanics, rules, and strategy, and interpreting the prompting formats specific to diplomacy.
+
 \section{Methodology}
 
 In general, the methodology for training is as follows:
