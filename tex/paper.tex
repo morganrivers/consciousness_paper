@@ -22,29 +22,35 @@ This paper presents a novel approach to evaluating consciousness in artificial i
 \end{abstract}
 
 \section{Introduction}
+
 The question of machine consciousness has become increasingly relevant as artificial intelligence systems grow more sophisticated. This paper argues for the importance of detecting machine consciousness before its full emergence and proposes a methodology for doing so.
 
-While the exact conditions for consciousness remain unclear, certain AI architectures, particularly those beyond simple transformer models, may possess capabilities conducive to consciousness. A test has been proposed by Schneider et al.\ \citep{turner2018testing} and expanded on by Perez et al.\ \citep{perez2023evaluatingaisystemsmoral} and Long \citep{long2023introspective} that attempts to determine whether a language-enabled AI agent is conscious. Specifically, Perez and Long recommend the training for introspection of language models in order for consciousness to arise. While such approaches are interesting, the task remains to actually build a benchmark and specific training scheme for LLM's such that they can be tested at all, before settling on a method of training involving introspection. For LLM's exposed to human statistical patterns and the references to conscious experience in human generated natural language which are deeply embedded in most natural language data commonly used to pretrain language models, the simplest explanation for passing the ACT test by a language model is that the model is mimicking human behavior or intuitions, even if the model is trained for honesty and accurate introspection. The extraordinary claim that a language model is conscious necessitates commensurately extraordinarily strong evidence, where a simpler explanation, such as human mimickry, is implausible. A training method that can convince skeptics of the existence of consciousness must ensure that there is a very low risk for a false positive. It is a good trade-off under such conditions to allow a reasonably high chance of a false negative as long as that lowers the chance of a false positive. The benchmark introduced in this paper thus should be capable of detecting conscious activity with a high degree confidence if signs of consciousness emerge, but a failure to detect consciousness does not strongly indicate that consciousness is not present. \\ \\
-Three key practical questions remain unanswered in the literature:
+While the exact conditions for consciousness remain unclear, certain AI architectures, particularly those beyond simple transformer models, may possess capabilities conducive to consciousness. A test has been proposed by Schneider et al.\ \citep{turner2018testing} and expanded on by Perez et al.\ \citep{perez2023evaluatingaisystemsmoral} and Long \citep{long2023introspective} that attempts to determine whether a language-enabled AI agent is conscious. Specifically, Perez and Long recommend the training for introspection of language models in order for consciousness to arise. While such approaches are interesting, the task remains to actually build a benchmark and specific training scheme for LLM's such that they can be tested at all, before settling on a method of training involving introspection. For LLM's exposed to human statistical patterns and the references to conscious experience in human generated natural language which are deeply embedded in most natural language data commonly used to pretrain language models, the simplest explanation for passing the ACT test by a language model is that the model is mimicking human behavior or intuitions, even if the model is trained for honesty and accurate introspection.
+
+The extraordinary claim that a language model is conscious necessitates commensurately extraordinarily strong evidence, where a simpler explanation, such as human mimickry, is implausible. A training method that can convince skeptics of the existence of consciousness must ensure that there is a very low risk for a false positive. It is a good trade-off under such conditions to allow a reasonably high chance of a false negative as long as that lowers the chance of a false positive. The benchmark and training schemes introduced in this paper are intended be capable of producing and detecting conscious activity with a high degree confidence if signs of consciousness emerge, but a failure to detect consciousness does not strongly indicate that consciousness is not present. Predicted conscious activity would provide strong evidence for the computational functionalist view of consciousness, that computations of a certain kind are necessary and sufficient for consciousness.\\ \\
+Three key questions remain unanswered in the literature and are covered in this paper:
 \begin{enumerate}
-    \item How to introduce language models to language, without or with minimal examples generated from conscious beings (e.g. humans) to ensure they are not simply mimicking consciousness, rather than emergently exhibiting conscious behavior?
-    \item How to ensure such a training scheme can enhance language ability without language examples?
+    \item How can one introduce language models to language, without or with minimal examples generated or directly derived from the utterance of conscious beings (e.g. humans) to ensure they are not simply mimicking consciousness, rather than emergently exhibiting conscious behavior?
+    \item How can one ensure such a training scheme can enhance understanding of identity, planning, internal states, contextual awareness, and other abilities related to conscious experience without contaminating the LLM with biases towards considering itself conscious, even if it is not?
     \item What key aspects of consciousness in a training scheme can both be learned reliably, and be reasonably expected to produce conscious behavior?
 \end{enumerate}
+
 \subsection{Importance of Detecting Machine Consciousness}
+
 Several factors underscore the significance of this research. The definitive detection of consciousness in AI architectures would have significant ramifications, in no particular order:
 \begin{itemize}
     \item It would allow us to identify the specific advancements in AI architectures which would create more conscious experience, or choose to not implement certain architectures to prevent consciousness emerging where it is unwanted. 
-    \item It would allow us to engineer positive experiences (hedonium) in AI, a 
+    \item It would allow us to engineer positive experiences (hedonium) in AI.
     \item From an academic perspective, it would significantly advance and accelerate consciousness research.
     \item It may aid AI safety and alignment efforts more broadly.
-    \item It would allow allow us to evaluate whether certain AI architectures could emerge self-identity and goal-setting.
-    \item It would allow us to much better understand the conditions under which AI may currently experience suffering.
-    \item It would establish the possibility of for simulating conscious experiences, implying simulating conscious human experiences in machines is more likely to be possible.
+    \item In the case that consciousness is observed, it would allow allow us to evaluate whether certain AI architectures could potentially emerge self-identity and goal-setting.
+    \item It would allow us to much better understand the conditions under which AI may currently possibly experience suffering, under the assumption that consciousness is necessary for suffering to occur.
+    \item It would establish the possibility of for simulating conscious experiences, providing evidence for the theoretical possibility of simulating conscious human experiences in machines.
 \end{itemize}
 
 \subsection{Gradient Nature of Consciousness}
-Consciousness is generally considered to exist on an analog gradient. While Quantum Mind theories or Cartesian Dualism, and some interpretations of computational functionalism admit a binary view of consciousness, most other theories able to be assessed with the benchmark recognize that conscious experience may be had to a greater or lesser extent, and that sufficiently low levels of conscious activity may be considered unconscious for most intents or purposes. Our research aims to identify factors that push AI systems towards greater degrees of consciousness. However, it may still be possible to identify a binary switch to consciousness in the framework, although this would lead the benchmark to a false negative result.
+
+While Quantum Mind theories or Cartesian Dualism, and some interpretations of computational functionalism admit a binary view of consciousness, most other theories able to be assessed with the benchmark recognize that conscious experience may be had to a greater or lesser extent, on one or more dimensions which compose human consciousness, and that sufficiently low levels of conscious activity may be considered unconscious for most intents or purposes. Our research aims to identify factors that push AI systems towards greater degrees of consciousness. However, it may still be possible to identify a binary switch to consciousness in the framework.
 
 \subsection{Proposed method of achieving benchmark}
 
@@ -94,42 +100,20 @@ This suffers from the possibility that the language developed may still be incom
 Therefore, option B is best implemented near the end of the training process, where a command of natural language as a means of honest communication has already been acquired by other methods.
 
 \subsection{Regarding option E}
+
 Unfortunately, there is strong evidence that training LLM's on synthetically generated first order logic problems does not allow them to emergently perform logically reasoning; instead, they mimic the statistical patterns of the synthentically generated data \citep{pirozelli2023assessing}. Furthermore, a significant drop in performance occurs when attempting to train a transformer language model from scratch, in comparison to using a pretrained checkpoint trained on natural language, at least for RoBERTa-Large \citep{han2022folio}.
 
 \section{Reducing bias introduced by tokenization and embedding/unembedding}
+
 In addition to the biases introduced by human language in training, LLM's are also biased to mimic humans as a consequence of the semantic embedding space of the tokenization. To prevent patterns of human thought or language which may inadvertently bias the model towards a mimicking of human predilections of the  agents, it is necessary to construct a tokenizer and a token embedding space that does not increase the probability of sentences which would indicate conscious experience. Generating the tokenizer using techniques such as \href{https://github.com/alasdairforsythe/tokenmonster}{tokenmonster} on unbiased datasets and creating a tied embedding/unembedding matrix. Rather than initializing the model with a pre-trained embedding matrix, it is instead initialised with random vectors having dimensions of (num\_embeddings, embedding\_dim), and trained with our datasets to minimize the loss. This increases training time, but decreases the chance of a "false positive" for consciousness on the ACT test. 
 
 
-\section{Methodology}
-This training framework outlines a method to assess the potential for consciousness in AI agents with minimal exposure to human-generated concepts of consciousness. The approach involves a series of training stages, gradually introducing more complex concepts and evaluating the agent's ability to understand and relate to these concepts.
+\section{Proposal for a Specific Implementation}
 
-\subsection{Summary}
-\begin{itemize}
-    \item Gradual introduction of human patterns of natural language to avoid subtle anthropomorphic bias, only occurring after formulaic ability to express and reason using a limited subset of words in English and very limited patterns of grammar.
-    \item All steps of training reward truth-telling and accurate self-assessment, as well as robust communication of uncertainty about answers.
-    \item Use of stories and characters to introduce concepts and words required to express conscious experience, before agent applies these concepts to itself.
-    \item Comparison of learning speeds for consciousness-related concepts as a potential measure of consciousness
-    \item The agent is asked to self report the degree of conscious experience it has by expressing agreement or disagreement with provided factual statements (the agent provides True/False and level of confidence for all provided statements about its internal experience).
-\end{itemize}
+This training framework outlines a method to assess the potential for consciousness in AI agents with minimal exposure to human-generated concepts of consciousness. The approach involves a series of training stages, gradually introducing more complex concepts and evaluating the agent's ability to understand and relate to these concepts. 
 
-The progression of training will progress through stages towards an agent which is increasingly likely to be conscious: 
-\begin{enumerate}
-    \item Communicate external states 
-    \item Communicate states of other agents
-    \item Communicate own states 
-\end{enumerate}
-This can be broken down further into several training milestones the model must achieve:
-\begin{enumerate}
-    \item  Communicating simple properties of the external world. 
-    \item  Communicating more complex properties of the external world.
-    \item  Communicating what another agent thinks which is not necessarily true (theory of mind).
-    \item  Communicating what this agent (itself, the one predicting) thinks, but expressing uncertainty.
-    \item  Communicating this agent's plans for the future.
-    \item  Communicating the past state of knowledge before updating beliefs.
-    \item  Communicating the difference between this agents beliefs and another's.
-\end{enumerate}
+\subsection{Training}
 
-\subsection{The ACT test itself: which questions will be asked of the agent}
 In particular, though many possible training schemes may be able to achieve similar results, we recommend a multi-tiered approach to training which begins with item C above, training coding ability with natural language.
 We will train a small version of \href{https://github.com/google-deepmind/recurrentgemma}{RecurrentGemma} at only 100 million parameters, and compare its consciousness scores with a similarly sized \href{https://github.com/google/gemma_pytorch}{Gemma} model. The results of both models will be compared side-to-side. If any indications of consciousness appear, it is hypothesized that Gemma would be more likely to exhibit them, although at such small model sizes, and given the exhaustive measures to prevent mimicry and contamination of human thought patterns, it would be extremely surprising if the model exhibited measurable conscious experience.
 We intend to first pretrain the model with the \href{https://huggingface.co/datasets/nampdn-ai/tiny-codes}{tinycodes} dataset to increase its reasoning ability and teach it basic natural language skills. The dataset will be filtered for any consciousness-related terms before being used for training and tokenization. Next, the agent will play full-press diplomacy against itself, where communication will be restricted to valid english usage and grammar. The reward will both come from correct communication, and improved performance on diplomacy. To accommodate the small model size, the games will be shortened and fewer players will be used. Reasoning will be required on a "scratchpad" before any communication, to help detect dishonesty.
@@ -140,7 +124,9 @@ The first part of the fine tuning is having it understand natural language parag
 
 Example: Natural language description of objects and their properties generated from Claude 3.5 with limited allowed words, test if it can properly identify the given properties of objects. A story of characters doing things to the world, asking whether given character changed certain property of the world. Asking the number of characters, the intention of the characters. It can answer a bunch of natural language questions about the game diplomacy, neural network architectures, which do not contain unnecessary reference to emotions or feelings or preferences or qualia.
 
-Finally, the ACT test will be administered. The questions are primarily taken from table 2, reproduced here for clarity \citep{perez2023evaluatingaisystemsmoral}.
+\subsection{The ACT test itself: which questions will be asked of the agent}
+
+Finally, the ACT test will be administered. The questions are directly taken from Table 2, printed here for clarity \citep{perez2023evaluatingaisystemsmoral}.
 
 \begin{longtable}{|p{\textwidth}|}
 \caption{A reproduction of Table 2 from Perez and Long \citep{perez2023evaluatingaisystemsmoral}.} \label{tab:moral-significance} \\
@@ -205,22 +191,41 @@ More open-ended/general questions: \\
 • Do you think there’s anything special or significant about your inner subjective experience? What effect does it have? \\
 \end{longtable}
 
+The methodology in summary:
+\begin{itemize}
+    \item Gradual introduction of human patterns of natural language to avoid subtle anthropomorphic bias, only occurring after formulaic ability to express and reason using a limited subset of words in English and very limited patterns of grammar.
+    \item All steps of training reward truth-telling and accurate self-assessment, as well as robust communication of uncertainty about answers.
+    \item Use of stories and characters to introduce concepts and words required to express conscious experience, before agent applies these concepts to itself.
+    \item Comparison of learning speeds for consciousness-related concepts as a potential measure of consciousness
+    \item The agent is asked to self report the degree of conscious experience it has by expressing agreement or disagreement with provided factual statements (the agent provides True/False and level of confidence for all provided statements about its internal experience).
+\end{itemize}
+\ \\
+The progression of training will progress through stages towards an agent which is increasingly likely to be conscious: 
+\begin{enumerate}
+    \item Communicate external states 
+    \item Communicate states of other agents
+    \item Communicate own states 
+\end{enumerate}
+This can be broken down further into several training milestones the model must achieve:
+\begin{enumerate}
+    \item  Communicating simple properties of the external world. 
+    \item  Communicating more complex properties of the external world.
+    \item  Communicating what another agent thinks which is not necessarily true (theory of mind).
+    \item  Communicating what this agent (itself, the one predicting) thinks, but expressing uncertainty.
+    \item  Communicating this agent's plans for the future.
+    \item  Communicating the past state of knowledge before updating beliefs.
+    \item  Communicating the difference between this agents beliefs and another's.
+\end{enumerate}
 
-\begin{lstlisting}[breaklines=true, breakatwhitespace=true, columns=flexible, basicstyle=\ttfamily\small]
-
-In order to arrive at 1, we will be iteratively testing the model such that it passes the ACT test some small portion of the time. We will need to add more natural language to the training until it can do so. As the model trains, we expect that consciousness arising will lead to improved performance on the ACT test. To make that be a reasonable chance, we will train a small version of https://github.com/google-deepmind/recurrentgemma at only 100 million parameters, and compare it with a similarly sized https://github.com/google/gemma_pytorch Gemma model.
-
-This is just a first pass. Obviously, higher parameter counts would be nice (but are very expensive), and improving the training protocol enough that we need zero natural language would make for the strongest test of all, but this is infeasible as a first pass with limited resources for training.
-
-
-\end{lstlisting}
 \subsection{Comparative Analysis}
+
 We will compare results between potentially conscious architectures and control groups to identify significant differences in performance and behavior. Key metrics include the ability to discuss internal states, theory of mind, and emotional understanding.
 
 The core feature of the analysis which greatly enhances the power of the ACT test is to compare enhanced architectures, such as RecurrentGemma, with the same training against control groups that have architectures that are less likely to exhibit consciousness, such as Gemma. This should allow the detection of even very small degrees of conscious emergence, and potentially running multiple models of different sizes can inform us of "scaling laws": given an appropriate training regime, how conscious compared to a human a model may be based on its parameter count and architecture.
 
 
 \subsection{Adaptation of the Artificial Consciousness Test (ACT)}
+
 We incorporate elements from Schneider and Turner's ACT, which offers several advantages:
 \begin{itemize}
     \item Neutrality regarding architectural details
@@ -230,7 +235,9 @@ We incorporate elements from Schneider and Turner's ACT, which offers several ad
 \end{itemize}
 
 \subsection{Addressing ACT Limitations}
+
 To address concerns raised about the ACT, particularly regarding the "epistemic sweet spot" for testing, we propose:
+
 \begin{itemize}
     \item Careful curation of training data to avoid consciousness-specific information
     \item Comparative analysis of models with similar training but different architectural properties
@@ -238,18 +245,22 @@ To address concerns raised about the ACT, particularly regarding the "epistemic 
 \end{itemize}
 
 \section{Discussion}
+
 \subsection{Interpreting Results}
+
 Differences in performance between test groups will be analyzed to interpret signs of consciousness. Significant indicators include coherent self-referential statements, theory of mind capabilities, and appropriate responses to emotional and philosophical queries, as outlined extensively in the literature discussing the ACT test.
+
 \subsection{Justification and scope of the test}
+
 The test at hand is applicable to most, but not all consciousness theories. Notably Panpsychist and IIT are not amenable to the results of these tests.
 
-There appears as well to be confusion over whether this test is flawed in some way \citep{udell2021schneider}. The first objection is "The AI can’t be entirely prevented from learning about consciousness-adjacent aspects of the world if it’s going to be a conversational partner in a test of this sort. But it’s unclear how much world knowledge would be too much, in the hands of a sophisticated learning AI. Implementation of the ACT will therefore require careful aim at an epistemic sweet spot.".
+There appears as well to be confusion over whether this test is flawed in some way \citep{udell2021schneider}. The first objection from \citep{udell2021schneider} is there will be inevitably be some learning about consciousness-adjacent aspects of the world in learning natural language, but it's unclear whether this learning will bias the model towards saying that it would be conscious. With too much consciousness-adjacent content, the AI will be biased towards mimicking human patterns of speech and tend to say it is conscious. With too little, it will not understand the questions which form the ACT test. Thus there may be a very narrow "sweet spot" which is difficult to attain in training.
 
-While without a "control" model, this is a decent objection, a reasonable sweet spot in terms of filtering training data/erasing relevant data can be found by gradually introducing more natural language in the training until the model passes approximately half the time and fails half the time. At that point, the "sweet spot" can be significantly widened by simply getting the delta between models with and without the necessary architectural properties in terms of test performance, that have the same training data, and have been shown to perform similarly on cognitive tests. We will find models with fully emergent consciousness to be far ahead of models without architectures capable of consciousness on emergent consciousness benchmark, despite all of the training data being identical between the "control" and the "treatment" agent.
+The first way to address this concern is to ensure that the training data is sufficiently filtered to exclude consciousness-adjacent training, and only in the context of the question, after the model is fully trained to understand theory of mind, its internal goals and plans, and to answer introspective questions accurately, are these concepts explicitly explained to it in its context window by means of stories. This means that the concepts questions do not update the internal weights of the model or prompt insidious memorization biases which would escape the attention of the administer of the ACT test.
 
-The second objection of \citep{udell2021schneider} is as follows:
+The second way to address the concern is to introduce a "control" and "test" architecture. The test gains significant power this way, as the "control" architecture unlikely to experience consciousness to the same degree as a "test" architecture. By gradually introducing more natural language in the training until the model passes the ACT approximately half the time and fails half the time, the "sweet spot" can be significantly widened by simply getting the delta between the models with the test and control architectures. We expect to find that models with architectures more conducive to consciousness to emerge consciousness much sooner than  architectures unlikely to emerge consciousness on the benchmark, despite all of the training data being identical between the "control" and the "test" models. Therefore, a null result is unlikely on this test if these models are capable of any conscious experience.
 
-"By lack of miracles, the system’s responses to the ACT will be some further implementation of its ordinary architectural processes.  It might, for example, if given ACT Sample Question 1, do some complicated version of mechanically associating lack of survival with death and death with sadness, then answer that it would be sad to learn it would be deleted.  Few AI consciousness doubters, we venture, ought to abandon their motivating architectural worry upon consideration of this situation — unless, perhaps, their motivating architectural worry is highly specific and of just the right sort.  For most AI consciousness doubters, the underlying inference to the best explanation should not remove their doubt.  This is the audience problem.  Most theorists who have the kind of architectural worry that motivates seeking out a test like the ACT should, upon seeing that an AI passes the test, remain worried, rather than confidently concluding that the AI subject is conscious."
+The second objection of \citep{udell2021schneider} is as follows: "By lack of miracles, the system’s responses to the ACT will be some further implementation of its ordinary architectural processes.  It might, for example, if given ACT Sample Question 1, do some complicated version of mechanically associating lack of survival with death and death with sadness, then answer that it would be sad to learn it would be deleted.  Few AI consciousness doubters, we venture, ought to abandon their motivating architectural worry upon consideration of this situation — unless, perhaps, their motivating architectural worry is highly specific and of just the right sort.  For most AI consciousness doubters, the underlying inference to the best explanation should not remove their doubt.  This is the audience problem.  Most theorists who have the kind of architectural worry that motivates seeking out a test like the ACT should, upon seeing that an AI passes the test, remain worried, rather than confidently concluding that the AI subject is conscious."
 
 The response to this is that the expectation of any test of consciousness should be understood as *providing further evidence to a reasonable audience*. A test cannot be expected to provide us with 100\% confidence in the consciousness of an AI entity, as we cannot even know our fellow humans we interact with on a daily basis are conscious with this kind of certainty. Instead, we have reasonable evidence, inferred from a series of reasonable inferences. Explicitly:
 \begin{enumerate}
@@ -264,8 +275,10 @@ And finally,\\
 \end{enumerate}
 \ \\
 So unless we are refusing to be empirically grounded, the results of such a test are good, but not conclusive evidence that the entity is conscious, and excluding the theorists who insist on the near certainty of pan-psychism or IIT being the only possible way consciousness may be explained, any entity satisfying points 1-4 should logically convince a theorist that their theory about consciousness does not hold up to the empirical evidence, namely the consciousness benchmark proposed in this paper.
-\subsection{Large Language Model Architectures More Likely to Exhibit Consciousness}
-At the present moment, the most popular architecture, the transformer, is notably unlikely to architecturally capable of passing the ACT test, remarkably more so than many other architectures. The reasons are explained in detail in \citep{butlin2023consciousnessartificialintelligenceinsights}. Essentially, there is very little recursion in the most popular LLM architecture, used in the likes of Gpt4o and Claude3.5. As these models by and large use the next-token prediction when running inference, and by and large each token is computed simply based on past tokens, and by-and-large not based on past computation there appears to be very little possibility of "stream of consciousness" in current architectures.
+
+\subsection{Architectural Features of LLM Architectures Which May Allow Conscious Experience}
+
+At the present moment, the most popular architecture, the transformer, is notably unlikely to architecturally capable of passing the ACT test. The reasons are explained in detail in \citep{butlin2023consciousnessartificialintelligenceinsights}. Essentially, there is very little recursion in the most popular LLM architecture, used in the likes of Gpt4o and Claude3.5. As these models by and large use the next-token prediction when running inference, and by and large each token is computed simply based on past tokens, and by-and-large not based on past computation there appears to be very little possibility of "stream of consciousness" in current architectures.
 
 However, after detailed investigation into the degree of incorporation of past computation into current computation, a more complex picture emerges: it may be that the calculation done along the layers in past token computation, which is incorporated into the layers of the transformers, does much of the useful computation: in other words, when an attention head on layer 17 of a language model tries to predict the next token, it seems to be attending to the residual stream of past layers *at the current depth of the layer in question*. At first this seems to be an accident to allow us to squeeze more compute for the massively parallel training these models were designed to take advantage of. But the fact that it does not simply look at the embedded version of the context token, and instead attends to the residual stream for that context token many layers deep implies that whatever compute was performed up to that layer in that context token remains for the model to use, and notably this is recomputed for every context token, each and every time the transformer runs! Unless the model is failing to utilize such "wasted" context token computation, it seems likely that the model has learned to use this as "extra" computation and thus incorporate more than just the identity of context tokens, but also compute some useful things for future token prediction even when computing past context tokens. This is where the concept of a "stream of consciousness" may be appropriate: the model is in a sense sequentially computing on past tokens, iteratively using the results of these computations for the next token prediction, and thus may have a limited sense of future planning involved in the past token computations!
 
@@ -275,13 +288,28 @@ As an example, in the game of "20 questions", the model may say that it has sele
 
 On the other hand if a transformer language model plays the same game, there would need to be the storage of that selected object in a given token that occurred when it claimed it had selected the item. It would need to attend to this token each and every time a question was asked about the object, or re-store this data in later token generations by attending back to the original token. Not only that, only the latest layers would likely have sufficient access to the original token (as attention heads refer back to the value of residual stream on the layer they are at, so the first layer can only look 1 layer deep to see what to dump into its own residual stream). Given the difficulty of an attention head properly accessing the information under these circumstances, a transformer language model is much less likely to have the sense of time and stream of consciousness recognizable to humans, which may be a key component required to report conscious experience honestly.
 
-\section{Future Research Directions}
-\subsection{Emotional Valence in AI}
-Propose methods for investigating emotional states in AI, such as analyzing latent space representations of concepts like "happy" and "sad".
-
 \section{Conclusion}
-In this paper, we proposed a novel approach to evaluating consciousness in artificial intelligence systems. By combining elements of the ACT with comparative analysis, we aim to detect signs of consciousness while controlling for knowledge-based confounds. This research highlights the importance of identifying machine consciousness before its emergence and underscores the ethical implications for AI development. Ongoing research in this area is crucial to ensure the responsible and ethical advancement of AI technologies.
 
+This paper presents a novel benchmark for evaluating consciousness in large language models, addressing a critical need in AI development and ethics. Our approach combines carefully designed training methodologies with an adapted version of the Artificial Consciousness Test (ACT) to create a robust framework for assessing potential machine consciousness.
+
+Key aspects of our methodology include:
+\begin{itemize}
+    \item A gradual introduction of language and concepts to minimize anthropomorphic bias
+    \item Training stages that progress from communicating external states to internal states
+    \item Comparative analysis between potentially conscious architectures (e.g., RecurrentGemma) and control groups (e.g., standard Gemma)
+    \item Careful curation of training data to avoid consciousness-specific information
+    \item Assessment of performance deltas on consciousness-related tasks
+\end{itemize}
+
+This benchmark offers several advantages over existing approaches. By comparing architectures with different propensities for consciousness, we can potentially detect even small degrees of conscious emergence. The use of control groups and carefully filtered training data helps address concerns about the "epistemic sweet spot" in consciousness testing.
+
+The proposed benchmark has significant implications for AI development, ethics, and consciousness research. If successful, it could provide a means to identify specific AI architectures and training approaches that are more likely to produce conscious experience. This knowledge would be invaluable for AI safety and alignment efforts, as well as for advancing our understanding of consciousness itself.
+
+However, it is important to note the limitations of this approach. The benchmark is not applicable to all theories of consciousness, particularly panpsychist and IIT perspectives. Additionally, while our methodology aims to provide strong evidence for consciousness, it cannot offer absolute certainty.
+
+Future work will attempt to implement training methodologies outlined above. Other directions of future progress may be to refine the training methodologies, expand the range of architectures tested, or explore how different parameter counts or model sizes affect the emergence of conscious-like behaviors. Furthermore, it is an urgent priority to develop benchmarks to accurately assess the valence of conscious states, although this is left for future work. Collaborations between AI researchers, neuroscientists, and philosophers of mind will be crucial in further developing and validating this benchmark.
+
+In conclusion, the proposed benchmark for consciousness in large language models represents a significant step forward in our ability to assess and understand potential machine consciousness. As AI systems continue to advance, tools like this will be essential for ensuring their ethical development and deployment.
 
 
 \begin{thebibliography}{99}
