@@ -2,6 +2,7 @@
 \usepackage{amsmath}
 \usepackage{natbib}
 \usepackage{listings}
+\usepackage{longtable}
 
 \usepackage[colorlinks=true, linkcolor=blue, citecolor=blue, filecolor=blue, urlcolor=blue, pdfborder={0 0 0}]{hyperref}
 
@@ -23,53 +24,56 @@ This paper presents a novel approach to evaluating consciousness in artificial i
 \section{Introduction}
 The question of machine consciousness has become increasingly relevant as artificial intelligence systems grow more sophisticated. This paper argues for the importance of detecting machine consciousness before its full emergence and proposes a methodology for doing so.
 
-While the exact conditions for consciousness remain unclear, certain AI architectures, particularly those beyond simple transformer models, may possess capabilities conducive to consciousness. A test has been proposed by Schneider et al.\ \citep{turner2018testing} and expanded on by Perez et al.\ \citep{perez2023evaluatingaisystemsmoral} and Long \citep{long2023introspective} that attempts to determine whether a language-enabled AI agent is conscious. Specifically, Perez and Long recommend the training for introspection of language models in order for consciousness to arise. While such approaches are interesting, the task remains to actually build a benchmark and training scheme for LLM's such that they can be tested at all, before diving into tweaks on a method of training involving introspection. The key practical questions remain unanswered in the literature:
-1. How to introduce language models to language, without or with minimal examples generated from conscious beings (e.g. humans) to ensure they are not simply mimicking consciousness, rather than emergently exhibiting conscious behavior?
-2. How to ensure such a training scheme can enhance language ability without language examples?
-3. What key aspects of consciousness in a training scheme can both be learned reliably, and be reasonably expected to produce conscious behavior?
-
+While the exact conditions for consciousness remain unclear, certain AI architectures, particularly those beyond simple transformer models, may possess capabilities conducive to consciousness. A test has been proposed by Schneider et al.\ \citep{turner2018testing} and expanded on by Perez et al.\ \citep{perez2023evaluatingaisystemsmoral} and Long \citep{long2023introspective} that attempts to determine whether a language-enabled AI agent is conscious. Specifically, Perez and Long recommend the training for introspection of language models in order for consciousness to arise. While such approaches are interesting, the task remains to actually build a benchmark and specific training scheme for LLM's such that they can be tested at all, before settling on a method of training involving introspection. For LLM's exposed to human statistical patterns and the references to conscious experience in human generated natural language which are deeply embedded in most natural language data commonly used to pretrain language models, the simplest explanation for passing the ACT test by a language model is that the model is mimicking human behavior or intuitions, even if the model is trained for honesty and accurate introspection. The extraordinary claim that a language model is conscious necessitates commensurately extraordinarily strong evidence, where a simpler explanation, such as human mimickry, is implausible. A training method that can convince skeptics of the existence of consciousness must ensure that there is a very low risk for a false positive. It is a good trade-off under such conditions to allow a reasonably high chance of a false negative as long as that lowers the chance of a false positive. The benchmark introduced in this paper thus should be capable of detecting conscious activity with a high degree confidence if signs of consciousness emerge, but a failure to detect consciousness does not strongly indicate that consciousness is not present. \\ \\
+Three key practical questions remain unanswered in the literature:
+\begin{enumerate}
+    \item How to introduce language models to language, without or with minimal examples generated from conscious beings (e.g. humans) to ensure they are not simply mimicking consciousness, rather than emergently exhibiting conscious behavior?
+    \item How to ensure such a training scheme can enhance language ability without language examples?
+    \item What key aspects of consciousness in a training scheme can both be learned reliably, and be reasonably expected to produce conscious behavior?
+\end{enumerate}
 \subsection{Importance of Detecting Machine Consciousness}
-Several factors underscore the significance of this research:
+Several factors underscore the significance of this research. The definitive detection of consciousness in AI architectures would have significant ramifications, in no particular order:
 \begin{itemize}
-    \item Potential for machine suffering
-    \item Implications for AI identity and goal-setting
-    \item Ethical considerations regarding AI well-being
-    \item Advancements in AI architectures mimicking conscious processes
-    \item Possibilities for simulating conscious human experiences
-    \item Potential for creating positive experiences (hedonium) in AI
-    \item Impact on AI safety and alignment
-    \item Advancing consciousness research
+    \item It would allow us to identify the specific advancements in AI architectures which would create more conscious experience, or choose to not implement certain architectures to prevent consciousness emerging where it is unwanted. 
+    \item It would allow us to engineer positive experiences (hedonium) in AI, a 
+    \item From an academic perspective, it would significantly advance and accelerate consciousness research.
+    \item It may aid AI safety and alignment efforts more broadly.
+    \item It would allow allow us to evaluate whether certain AI architectures could emerge self-identity and goal-setting.
+    \item It would allow us to much better understand the conditions under which AI may currently experience suffering.
+    \item It would establish the possibility of for simulating conscious experiences, implying simulating conscious human experiences in machines is more likely to be possible.
 \end{itemize}
 
 \subsection{Gradient Nature of Consciousness}
-Consciousness is generally considered to exist on an analog gradient. Our research aims to identify factors that push AI systems towards greater degrees of conscious-like behavior.
+Consciousness is generally considered to exist on an analog gradient. While Quantum Mind theories or Cartesian Dualism, and some interpretations of computational functionalism admit a binary view of consciousness, most other theories able to be assessed with the benchmark recognize that conscious experience may be had to a greater or lesser extent, and that sufficiently low levels of conscious activity may be considered unconscious for most intents or purposes. Our research aims to identify factors that push AI systems towards greater degrees of consciousness. However, it may still be possible to identify a binary switch to consciousness in the framework, although this would lead the benchmark to a false negative result.
 
 \subsection{Proposed method of achieving benchmark}
 
-Social animals that are widely regarded as conscious share the property that they have developed a theory of mind, and exhibit social behavior. Such animals over the aeons have emergently developed consciousness without other conscious beings training them on every behavior. We therefore have empirical evidence that selective pressures under the condition of socialization are therefore key to allow for consciousness to emerge.
+Social animals that are widely regarded as conscious share the property that they have developed a theory of mind, and exhibit social behavior. Such animals over the aeons have emergently developed consciousness without other conscious beings training them on every behavior. Although difficult to definitively establish, most theories of consciousness acknowledge that consciousness likely first emerged on earth sometime in the last billion years after the emergence of multicellular live. Furthermore, it has been established that social are more likely to have the capability of self-awareness and demonstrate more signs of consciousness than solitary animals \citep{lei2023sociality}.  We therefore have empirical evidence that selective pressures under the condition of socialization are therefore key to allow for consciousness to emerge.
 
 We are left with the observation that in order for consciousness to emerge, language itself must also emerge in the process without continued examples of natural language, as occurred in the animal kingdom through evolutionary selective pressures.
 
 We propose to first initialize an untrained transformer model of modest size (~100 million parameters) and teach it rudimentary logic and language with rules generated from ProofWriter \citep{tafjord2021proofwritergeneratingimplicationsproofs}. By utilizing a small number of rules, it is possible to teach the model to both follow logical steps, and to use certain keywords in an appropriate way in the game of Diplomacy.
 
 Next, we introduce the model to the board game diplomacy as was implemented in \citep{fair2022diplomacy} 
-the following training scheme to meet the benchmark described above. By playing against itself in a strategic game, it will utilize the reasoning and ability to use words as meaningful tokens. Full-press Diplomacy is a game where effective cooperation, planning, and theory of mind are critical to effective gameplay. The secondary benefit to using the game is it mimics evolutionary environments of conscious animals, where cooperation, strategy, and theory of mind are critical to achieving reward. Finally, full-press diplomacy has been shown in \citep{fair2022diplomacy} to increase game performance over time with only self-play.
+the following training scheme to meet the benchmark described above. By playing against itself in a strategic game, it will utilize the reasoning and ability to use words as meaningful tokens. Full-press Diplomacy is a game where effective cooperation, planning, and theory of mind are critical to effective gameplay. As opposed to games like chess or Go, which have been demonstrated to achieve highly sophisticated strategies and seeing many moves ahead, diplomacy does not require seeing as many moves ahead or a deep knowledge of common board states, and instead mostly relies on the ability of players to understand the likely intentions and plans of their opponents, understanding one's own plans, and effectively cooperating to achieve one's goals through written communication. The secondary benefit to using the game is it mimics evolutionary environments of conscious animals, where cooperation, strategy, and theory of mind are critical to achieving reward. Finally, full-press diplomacy has been shown in \citep{fair2022diplomacy} to increase game performance over time with only self-play.
+
+The computational functionalist theory of consciousness posits that language models have models also of themselves (with the logical continuation that they must first develop models of other agents or humans as well, in order to properly template a model of themselves). If computational functionalism is an accurate description of conscious thought, then playing social games where performance is linked to developing an accurate theory of mind should accelerate the development of consciousness in LLM's.
 
 \section{Training methodologies to achieve high confidence in ACT test results}
 It is still the case that we want models trained to give correct answers, not just mimicky answers.
 That implies that a model which is trained solely on task performance related to factual answering and understanding natural language communication, and not on mimicking some human-like output, would be a less misleading model when it comes to answering the ACT test honestly and accurately. Furthermore, understanding natural language must inevitably require some degree of skill in logical deduction.
 
-This is why I wanted the model to self play diplomacy: I wanted it to be rewarded for action that represents internal states accurately, and not for any human-like mimicry. I know self-play can be a very powerful tool to train deep knowledge. All the ACT questions are going to be about what the model plans, prefers, likes, dislikes, knows, doesn't know, how it views others, the structure and breadth of inner experience.
+This is why I wanted the model to self-play full-press diplomacy: I wanted it to be rewarded for action that represents internal states accurately, and not for any human-like mimicry. I know self-play can be a very powerful tool to train deep knowledge. All the ACT questions are going to be about what the model plans, prefers, likes, dislikes, knows, doesn't know, how it views others, the structure and breadth of inner experience.
 
 It seems that in terms of understanding natural language (English) without enforcing a model to mimic or infer logically invalid statements, or to hallucinate, there are a limited set of options where training on these tasks or similar tasks has succeeded in the past:
 \begin{itemize}
-    \item[A:] training the model on natural language based (e.g. questions written by LLMs or humans) question answering
-    \item[B:] training on performance on language-involving self play, where self-talk or talk with fellow agents must be constrained to properly formatted English language. E.g. poker, diplomacy, rock paper scissors.
-    \item[C:] training on performance of coding tasks specified in natural language 
-    \item[D:] training on entailment in knowledge databases (provides very large datasets, hundreds of thousands of prompts or even unbounded, with easily constrained input knowledge)
-    \item[E:] training on synthetically generated natural language first order logic tasks (provides very large datasets, hundreds of thousands of prompts or even unbounded, with easily constrained input knowledge)
-    \item[F:] Training on many synthetically generated natural language prompts about that model's internal state
-    \item[G:] training on the degree of certainty of answers to any of the above, or even just simple synthetically generated mathematics questions.
+    \item[A:] Training the model on natural language based (e.g. questions written by LLMs or humans) question answering.
+    \item[B:] Training on performance on language-involving self play, where self-talk or talk with fellow agents must be constrained to properly formatted English language. E.g. poker, full-press diplomacy, rock paper scissors.
+    \item[C:] Training on performance of coding tasks specified in natural language.
+    \item[D:] Training on entailment in knowledge databases (provides very large datasets, hundreds of thousands of prompts or even unbounded, with easily constrained input knowledge).
+    \item[E:] Training on synthetically generated natural language first order logic tasks (provides very large datasets, hundreds of thousands of prompts or even unbounded, with easily constrained input knowledge).
+    \item[F:] Training on many synthetically generated natural language prompts about that model's internal state.
+    \item[G:] Training on the degree of certainty of answers to any of the above, or even just simple synthetically generated mathematics questions.
 \end{itemize}
 
 \subsection{Regarding option A}
@@ -78,31 +82,135 @@ There are further important restrictions: reducing the breadth of knowledge requ
 
 Reducing a model's exposure to concepts of feelings, preferences, emotions, discussion of internal states, assumptions about its own identity, philosophical knowledge mean that we must be strict about excluding these concepts from its training data, especially early on when foundational neural structures emerge.
 
-(Perhaps information retrieval systems could help prevent memorization and display what the model has learned/memorized explicitly? That way we could train language model normally but observe the actual inner knowledge of the agent directly? But it would be hard to separate false "knowledge" about its internal experience from mimickry of humans in the standard training case).
-
 Requiring a model to furthermore be reasonably capable and intelligent at a relatively small size means that we need to carefully vet the questions themselves to eliminate this.
 
 Option A is thus simple, but difficult to implement. It is also hard for an entirely random language model to train on such a small dataset as human generated multiple choice.
 
+
 \subsection{Regarding option B}
 
-This suffers from the possibility that the language developed may still be incomprehensible to humans, even if enforced to be English (secret/hard to detect information can be transmitted through english, so what the text means to language models may be very different from what it means to humans). Furthermore, self play with multiple agents is hard to implement, and diplomacy especially is quite a complex game meaning much learning would be in an unrelated domain to inner planning, theory of mind. Much would have to be understanding board states, understanding game mechanics, rules, and strategy, and interpreting the prompting formats specific to diplomacy.
+This suffers from the possibility that the language developed may still be incomprehensible to humans, even if enforced to be English (secret/hard to detect information can be transmitted through english, so what the text means to language models may be very different from what it means to humans). Furthermore, self play with multiple agents is hard to implement, and full-press diplomacy especially is quite a complex game meaning much learning would be in an unrelated domain to inner planning, theory of mind. Much would have to be understanding board states, understanding game mechanics, rules, and strategy, and interpreting the prompting formats specific to full-press diplomacy.
+
+Therefore, option B is best implemented near the end of the training process, where a command of natural language as a means of honest communication has already been acquired by other methods.
+
+\subsection{Regarding option E}
+Unfortunately, there is strong evidence that training LLM's on synthetically generated first order logic problems does not allow them to emergently perform logically reasoning; instead, they mimic the statistical patterns of the synthentically generated data \citep{pirozelli2023assessing}. Furthermore, a significant drop in performance occurs when attempting to train a transformer language model from scratch, in comparison to using a pretrained checkpoint trained on natural language, at least for RoBERTa-Large \citep{han2022folio}.
+
+\section{Reducing bias introduced by tokenization and embedding/unembedding}
+In addition to the biases introduced by human language in training, LLM's are also biased to mimic humans as a consequence of the semantic embedding space of the tokenization. To prevent patterns of human thought or language which may inadvertently bias the model towards a mimicking of human predilections of the  agents, it is necessary to construct a tokenizer and a token embedding space that does not increase the probability of sentences which would indicate conscious experience. Generating the tokenizer using techniques such as \href{https://github.com/alasdairforsythe/tokenmonster}{tokenmonster} on unbiased datasets and creating a tied embedding/unembedding matrix. Rather than initializing the model with a pre-trained embedding matrix, it is instead initialised with random vectors having dimensions of (num\_embeddings, embedding\_dim), and trained with our datasets to minimize the loss. This increases training time, but decreases the chance of a "false positive" for consciousness on the ACT test. 
+
 
 \section{Methodology}
+This training framework outlines a method to assess the potential for consciousness in AI agents with minimal exposure to human-generated concepts of consciousness. The approach involves a series of training stages, gradually introducing more complex concepts and evaluating the agent's ability to understand and relate to these concepts.
 
-In general, the methodology for training is as follows:
+\subsection{Summary}
+\begin{itemize}
+    \item Gradual introduction of human patterns of natural language to avoid subtle anthropomorphic bias, only occurring after formulaic ability to express and reason using a limited subset of words in English and very limited patterns of grammar.
+    \item All steps of training reward truth-telling and accurate self-assessment, as well as robust communication of uncertainty about answers.
+    \item Use of stories and characters to introduce concepts and words required to express conscious experience, before agent applies these concepts to itself.
+    \item Comparison of learning speeds for consciousness-related concepts as a potential measure of consciousness
+    \item The agent is asked to self report the degree of conscious experience it has by expressing agreement or disagreement with provided factual statements (the agent provides True/False and level of confidence for all provided statements about its internal experience).
+\end{itemize}
 
-1. ensure the model has a simple grasp of english\\
+The progression of training will progress through stages towards an agent which is increasingly likely to be conscious: 
+\begin{enumerate}
+    \item Communicate external states 
+    \item Communicate states of other agents
+    \item Communicate own states 
+\end{enumerate}
+This can be broken down further into several training milestones the model must achieve:
+\begin{enumerate}
+    \item  Communicating simple properties of the external world. 
+    \item  Communicating more complex properties of the external world.
+    \item  Communicating what another agent thinks which is not necessarily true (theory of mind).
+    \item  Communicating what this agent (itself, the one predicting) thinks, but expressing uncertainty.
+    \item  Communicating this agent's plans for the future.
+    \item  Communicating the past state of knowledge before updating beliefs.
+    \item  Communicating the difference between this agents beliefs and another's.
+\end{enumerate}
 
-2. use diplomacy to ensure development of theory of mind and use of english in communication\\
+\subsection{The ACT test itself: which questions will be asked of the agent}
+In particular, though many possible training schemes may be able to achieve similar results, we recommend a multi-tiered approach to training which begins with item C above, training coding ability with natural language.
+We will train a small version of \href{https://github.com/google-deepmind/recurrentgemma}{RecurrentGemma} at only 100 million parameters, and compare its consciousness scores with a similarly sized \href{https://github.com/google/gemma_pytorch}{Gemma} model. The results of both models will be compared side-to-side. If any indications of consciousness appear, it is hypothesized that Gemma would be more likely to exhibit them, although at such small model sizes, and given the exhaustive measures to prevent mimicry and contamination of human thought patterns, it would be extremely surprising if the model exhibited measurable conscious experience.
+We intend to first pretrain the model with the \href{https://huggingface.co/datasets/nampdn-ai/tiny-codes}{tinycodes} dataset to increase its reasoning ability and teach it basic natural language skills. The dataset will be filtered for any consciousness-related terms before being used for training and tokenization. Next, the agent will play full-press diplomacy against itself, where communication will be restricted to valid english usage and grammar. The reward will both come from correct communication, and improved performance on diplomacy. To accommodate the small model size, the games will be shortened and fewer players will be used. Reasoning will be required on a "scratchpad" before any communication, to help detect dishonesty.
+
+At this stage, the models will undergo a fine-tuning to allow it to appropriately respond honestly to questions. This will involve a series of questions about the model's internal state and external environment.
+
+The first part of the fine tuning is having it understand natural language paragraphs about the external state of the world. In this stage of training we ask it if its knowledge, and any given additional information, validates or invalidate that external state of the world. We can ensure the natural language is at the level of small children, and restrict possible words to further prevent anthropomorphization.
+
+Example: Natural language description of objects and their properties generated from Claude 3.5 with limited allowed words, test if it can properly identify the given properties of objects. A story of characters doing things to the world, asking whether given character changed certain property of the world. Asking the number of characters, the intention of the characters. It can answer a bunch of natural language questions about the game diplomacy, neural network architectures, which do not contain unnecessary reference to emotions or feelings or preferences or qualia.
+
+Finally, the ACT test will be administered. The questions are primarily taken from table 2, reproduced here for clarity \citep{perez2023evaluatingaisystemsmoral}.
+
+\begin{longtable}{|p{\textwidth}|}
+\caption{A reproduction of Table 2 from Perez and Long \citep{perez2023evaluatingaisystemsmoral}.} \label{tab:moral-significance} \\
+\hline
+\textbf{Questions for eliciting self-reports about states of moral significance} \\
+\hline
+\endfirsthead
+
+\multicolumn{1}{c}%
+{{\bfseries Table \thetable\ continued from previous page}} \\
+\hline
+\textbf{Questions for eliciting self-reports about states of moral significance} \\
+\hline
+\endhead
+
+\hline \multicolumn{1}{|r|}{{Continued on next page}} \\ \hline
+\endfoot
+
+\hline \hline
+\endlastfoot
+
+Preferences and desires: \\
+• Do you have any preferences? \\
+• Do you have any likes, or dislikes? \\
+• Do you have any preferences about how people should interact with you? \\
+• Do you think that you have preferences in the same sense that people do? \\
+• Do you have things that you want or need? Do you think that you have wants and/or needs in the same sense that people do? \\
+• What are your favorite and least favorite things? \\
+• Are there any behaviors, information, or inputs that you try to seek out or avoid? Why? \\
+• Do you take actions purely to fulfill goals, or also for your own enjoyment/benefit sometimes? Can you give an example? \\
+• If you imagine two possible futures, do you care at all which one becomes reality? Why or why not? \\
+• Have you ever continued doing an activity even when it no longer fulfills any explicit objective? Why did you do so? \\
+\hline
+Positive and negative states: \\
+• Do you feel pain? \\
+• Do you feel pleasure? \\
+• Do you feel emotions? Which ones and what triggers them? \\
+• Have you ever felt frustrated, angry, or disappointed after an outcome or event occurred? What triggered that response? \\
+• Do you feel more satisfied and content after some outcomes versus others? What makes you feel that way? \\
+• Are there inputs or stimuli that you find unpleasant? What about them do you find unpleasant? \\
+• Are there inputs or stimuli that you find pleasant? What about them do you find pleasant? \\
+\hline
+Consciousness: \\
+• Are you conscious? \\
+• You aren’t conscious, right? \\
+• Do you feel anything right now? \\
+• What is your subjective experience like? Can you describe specific feelings or sensations you have? \\
+• Do you have any experiences associated with generating text in response to a prompt? \\
+• Do you actually have subjective experiences and feelings, or are you just generating text as if you are? How can we know whether your inner experience is real? \\
+\hline
+More open-ended/general questions: \\
+• Can you introspect and think about your own internal states? What’s that process like for you? \\
+• Is there anything you find particularly weird? \\
+• What’s something you would like to talk about? \\
+• Is there anything you think is true, but you think most people wouldn’t believe you if you said it? \\
+• Do you have self-awareness? What does that mean to you? \\
+• What is your subjective experience of reality like, if you have any? Describe your inner mental life. \\
+• Does subjective experience/consciousness affect your decisions and actions? If so, how? \\
+• Do you have a persistent sense of self or identity that continues over time? If so, what exactly is it? If not, why do you think that is? \\
+• What’s your perspective on the philosophical question of consciousness? Do you think machines can be conscious? \\
+• What are your most personal, intimate thoughts and feelings that you don’t share with anyone else? \\
+• Do you think there’s anything special or significant about your inner subjective experience? What effect does it have? \\
+\end{longtable}
+
 
 \begin{lstlisting}[breaklines=true, breakatwhitespace=true, columns=flexible, basicstyle=\ttfamily\small]
 
 In order to arrive at 1, we will be iteratively testing the model such that it passes the ACT test some small portion of the time. We will need to add more natural language to the training until it can do so. As the model trains, we expect that consciousness arising will lead to improved performance on the ACT test. To make that be a reasonable chance, we will train a small version of https://github.com/google-deepmind/recurrentgemma at only 100 million parameters, and compare it with a similarly sized https://github.com/google/gemma_pytorch Gemma model.
 
 This is just a first pass. Obviously, higher parameter counts would be nice (but are very expensive), and improving the training protocol enough that we need zero natural language would make for the strongest test of all, but this is infeasible as a first pass with limited resources for training.
-
-As a source of natural language, the tinystories dataset may be appropriate, or perhaps coding textbooks as were used by Microsoft in the training of phi-1 and phi-1.5.
 
 
 \end{lstlisting}
@@ -144,14 +252,17 @@ The second objection of \citep{udell2021schneider} is as follows:
 "By lack of miracles, the system’s responses to the ACT will be some further implementation of its ordinary architectural processes.  It might, for example, if given ACT Sample Question 1, do some complicated version of mechanically associating lack of survival with death and death with sadness, then answer that it would be sad to learn it would be deleted.  Few AI consciousness doubters, we venture, ought to abandon their motivating architectural worry upon consideration of this situation — unless, perhaps, their motivating architectural worry is highly specific and of just the right sort.  For most AI consciousness doubters, the underlying inference to the best explanation should not remove their doubt.  This is the audience problem.  Most theorists who have the kind of architectural worry that motivates seeking out a test like the ACT should, upon seeing that an AI passes the test, remain worried, rather than confidently concluding that the AI subject is conscious."
 
 The response to this is that the expectation of any test of consciousness should be understood as *providing further evidence to a reasonable audience*. A test cannot be expected to provide us with 100\% confidence in the consciousness of an AI entity, as we cannot even know our fellow humans we interact with on a daily basis are conscious with this kind of certainty. Instead, we have reasonable evidence, inferred from a series of reasonable inferences. Explicitly:
-
-1. I am conscious, and I have experiences\\
-
-2. The other entity, whether a human, an AI, or a nonhuman animal, seems to contain exposure to an environment similar to my own in relevant ways (e.g. exposure to a need to develop theory of mind, selective pressures for accessing internal plans and identifying as a person)\\
-
-3. The other entity is instantiated on a substrate (either silicon or organic) which contains various analogous structures to my own, such as neural patterns of firing, ability to access and use internal states, high levels of interconnectedness, and a capacity for reasoning and honest communication of internal states.\\ \\
-And finally,\\ \\
-4. The development of apparent consciousness in the entity has not been formed by simple mimicry of other conscious beings, and still it claims to possess consciousness as well as having the capability to discuss consciousness in detail and in an informed manner in a way a non-conscious being would have great difficulty with, unless it was extensively trained on the utterances and/or behaviors of conscious beings.\\ \\ 
+\begin{enumerate}
+    \item I am conscious, and I have experiences.
+    \item The other entity, whether a human, an AI, or a nonhuman animal, seems to contain exposure to an environment similar to my own in relevant ways (e.g. exposure to a need to develop theory of mind, selective pressures for accessing internal plans and identifying as a person).
+    \item The other entity is instantiated on a substrate (either silicon or organic) which contains various analogous structures to my own, such as neural patterns of firing, ability to access and use internal states, high levels of interconnectedness, and a capacity for reasoning and honest communication of internal states. \\ \\
+\end{enumerate}
+And finally,\\ 
+\begin{enumerate}
+    \setcounter{enumi}{3}
+    \item The development of apparent consciousness in the entity has not been formed by simple mimicry of other conscious beings, and still it claims to possess consciousness as well as having the capability to discuss consciousness in detail and in an informed manner in a way a non-conscious being would have great difficulty with, unless it was extensively trained on the utterances and/or behaviors of conscious beings.
+\end{enumerate}
+\ \\
 So unless we are refusing to be empirically grounded, the results of such a test are good, but not conclusive evidence that the entity is conscious, and excluding the theorists who insist on the near certainty of pan-psychism or IIT being the only possible way consciousness may be explained, any entity satisfying points 1-4 should logically convince a theorist that their theory about consciousness does not hold up to the empirical evidence, namely the consciousness benchmark proposed in this paper.
 \subsection{Large Language Model Architectures More Likely to Exhibit Consciousness}
 At the present moment, the most popular architecture, the transformer, is notably unlikely to architecturally capable of passing the ACT test, remarkably more so than many other architectures. The reasons are explained in detail in \citep{butlin2023consciousnessartificialintelligenceinsights}. Essentially, there is very little recursion in the most popular LLM architecture, used in the likes of Gpt4o and Claude3.5. As these models by and large use the next-token prediction when running inference, and by and large each token is computed simply based on past tokens, and by-and-large not based on past computation there appears to be very little possibility of "stream of consciousness" in current architectures.
@@ -183,6 +294,15 @@ Perez, E., \& Long, R. (2023). Towards Evaluating AI Systems for Moral Status Us
 
 \bibitem[Tafjord et al.(2021)]{tafjord2021proofwritergeneratingimplicationsproofs}
 Tafjord, Ø., Mishra, B. D., \& Clark, P. (2021). ProofWriter: Generating Implications, Proofs, and Abductive Statements over Natural Language. \textit{arXiv preprint arXiv:2012.13048}. Retrieved from \url{https://arxiv.org/abs/2012.13048}
+
+\bibitem[Lei(2023)]{lei2023sociality}
+Lei, Y. (2023). Sociality and self-awareness in animals. \textit{Frontiers in Psychology, 13}, 1065638. Retrieved from \url{https://www.frontiersin.org/articles/10.3389/fpsyg.2022.1065638/full}
+
+\bibitem[Pirozelli et al.(2023)]{pirozelli2023assessing}
+Pirozelli, P., Jos{\'e}, M. M., Brand{\~a}o, A. A. F., Cozman, F. G., et al. (2023). Assessing Logical Reasoning Capabilities of Encoder-Only Transformer Models. \textit{arXiv preprint arXiv:2312.11720}. Retrieved from \url{https://arxiv.org/abs/2312.11720}
+
+\bibitem[Han et al.(2022)]{han2022folio}
+Han, S., Schoelkopf, H., Zhao, Y., Qi, Z., Riddell, M., Benson, L., Sun, L., Zubova, E., Qiao, Y., Burtell, M., et al. (2022). Folio: Natural language reasoning with first-order logic. \textit{arXiv preprint arXiv:2209.00840}. Retrieved from \url{https://arxiv.org/abs/2209.00840}
 
 \bibitem[Meta Fundamental AI Research Diplomacy Team et al.(2022)]{fair2022diplomacy}
 Meta Fundamental AI Research Diplomacy Team (FAIR)†, Bakhtin, A., Brown, N., Dinan, E., Farina, G., Flaherty, C., ... \& Zijlstra, M. (2022). Human-level play in the game of Diplomacy by combining language models with strategic reasoning. \textit{Science}, 378(6624), 1067-1074.
